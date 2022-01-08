@@ -1,0 +1,41 @@
+.top-left {
+  position: absolute;
+  top: 0px;
+  left: 16px;
+}
+.top-center {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+}
+.bottom-center {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  opacity: 0.8;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 0px;
+  left: 16px;
+}
+.bottom-right {
+  position: absolute;
+  bottom: 0px;
+  right: 16px;
+}
+.middle-left {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: left;
+  padding: 30px;
+}
+.middle-left-2 {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: left;
+  padding: 30px;
+}

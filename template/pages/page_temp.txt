@@ -1,0 +1,15 @@
+{% extends "temps/index.html" %}
+{% block maincontent %}
+{% load static %}
+<section class="Section-White">
+
+</section>
+{% endblock %}
+
+
+.bottom-center {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  opacity: 0.8;
+}

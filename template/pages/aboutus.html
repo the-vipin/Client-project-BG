@@ -1,0 +1,130 @@
+{% extends "temps/index.html" %}
+{% block maincontent %}
+{% load static %}
+<section class="Section-White">
+    <div>
+        <div class="text-center">
+            <h2 class="TextH2">About us</h2>
+            <hr class="HrH2">
+        </div>
+        <div class="p-5 mx-1 md:mx-20 ">
+            <style>
+                #AboutUs_readmore {display: none;}
+            </style>
+            <div class="Text-P Text-Container-s">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore iste reiciendis dicta laborum. Eveniet aliquid aperiam nemo accusamus blanditiis quisquam! Necessitatibus rerum recusandae consectetur dolore, ratione nostrum magni aperiam quam iure minus harum ipsam earum quos sapiente blanditiis pariatur aliquid.</p>
+                <span id="AboutUs_Readless_dots">...</span>
+                <span id="AboutUs_readmore">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span>
+                <span><button onclick="AboutUs_readmoreFunction()" id="AboutUs_readmore_btn" class="Read_more_btn">Read more</button></span>
+            </div>
+            <script>
+                function AboutUs_readmoreFunction() {
+                var dots = document.getElementById("AboutUs_Readless_dots");
+                var moreText = document.getElementById("AboutUs_readmore");
+                var btnText = document.getElementById("AboutUs_readmore_btn");
+                
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more"; 
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less"; 
+                    moreText.style.display = "inline";
+                }
+                }
+            </script>
+            
+        </div>
+    </div>
+</section>
+<section class="Section-White">
+    <div>
+        <div class="text-center">
+            <h2 class="TextH2">Look At Glance</h2>
+            <hr class="HrH2">
+        </div>
+        <div class="p-5 mx-1 md:mx-20 ">
+            <div class="Text-P Text-Container-s">
+                <p>Lorem ipsum dolor sit amet consectetur Necessitatibus rerum recusandae consectetur dolore, ratione nostrum magni aperiam quam iure minus harum ipsam earum quos sapiente blanditiis pariatur aliquid.</p>
+                
+            </div>
+            <div id="LOOK_AT_GLANCE_CARD" class="grid grid-cols-4 gap-6 TEAM_MEM_GRID LOOK-AT-GLANCE">
+                <div class="CARD">
+                    <div class="IMAGE-BOX">
+                        <img src="{% static 'icon/company.png' %}" class="IMAGE" alt="">
+                    </div>
+                    <div>
+                        <span class="VALUE">5+</span>
+                        <br>
+                        <span class="SUPPORT_TEXT">Companies</span>
+                    </div>
+                </div>
+                <div class="CARD">
+                    <div class="IMAGE-BOX">
+                        <img src="{% static 'icon/product.png' %}" class="IMAGE" alt="">
+                    </div>
+                    <div>
+                        <span class="VALUE">7+</span>
+                        <br>
+                        <span class="SUPPORT_TEXT">Products</span>
+                    </div>
+                </div>
+                <div class="CARD">
+                    <div class="IMAGE-BOX">
+                        <img src="{% static 'icon/team.png' %}" class="IMAGE" alt="">
+                    </div>
+                    <div>
+                        <span class="VALUE">500+</span>
+                        <br>
+                        <span class="SUPPORT_TEXT">Employees</span>
+                    </div>
+                </div>
+                <div class="CARD">
+                    <div class="IMAGE-BOX">
+                        <img src="{% static 'icon/love.png' %}" class="IMAGE" alt="">
+                    </div>
+                    <div>
+                        <span class="VALUE">50K+</span>
+                        <br>
+                        <span class="SUPPORT_TEXT">Beneficiary</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<section class="Section-White">
+    <div>
+        <div class="text-center">
+            <h2 class="TextH2">Meet our team</h2>
+            <hr class="HrH2">
+        </div>
+        <div class="p-5 mx-1 md:mx-20 ">
+            <div class="Text-P Text-Container-s">
+                <p>Lorem fdg c cc rdfewd dsfcsdx dsxcdsdwq ente blanditiis pariatur aliquid.</p>
+            </div>
+            <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+                    {% for A in Our_team %}
+                    <div class="w-full bg-white rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
+                        <div class="p-5">
+                            <div class="rounded-full overflow-hidden w-40 h-40">
+                                <img class="object-center object-cover h-auto w-full" src="{{A.img.url}}" alt="photo">
+                            </div>
+                        </div>
+                        <div class="p-4 w-full">
+                            <p class="text-xl text-gray-800 font-semibold">{{A.name}}</p>
+                            <p class="text-base text-gray-600 font-normal">{{A.designation}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>                   
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

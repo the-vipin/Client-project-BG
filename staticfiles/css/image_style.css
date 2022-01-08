@@ -1,0 +1,51 @@
+.Home_bg_img1 {
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Icon Images */
+.Icon-image {
+  width: 100%;
+}
+.Icon-image-2 {
+  width: 25px;
+}
+.Icon-image-2:hover {
+  width: 30px;
+}
+
+/* Our business slides */
+.Ourbusi-Img1 {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  width: 100%;
+}
+.Ourbusi-Img2 {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  width: 100%;
+  opacity: 0.6;
+}
+.active,
+.Ourbusi-Img2:hover {
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Ourbusi-ImgSlides {
+  height: 600px;
+  vertical-align: middle;
+  overflow: hidden;
+  position: relative;
+}
+.OurBusinessImageRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.OurBusinessImageColumn {
+  width: 20%;
+  float: left;
+}

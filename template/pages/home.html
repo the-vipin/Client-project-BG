@@ -1,0 +1,244 @@
+{% extends "temps/index.html" %}
+{% block maincontent %}
+{% load static %}
+<section>
+    
+    <div class="w-full Home_bg_img1" style="background-image: url({% static 'img/home_image.jpg' %});">
+        <div class="flex items-center  w-full h-full">
+            <div class="mx-3 p-4 w-full md:w-2/5">
+                <h1 class="md:text-6xl font-semibold text-gray-800 uppercase">WE MAKE TRUST ,<br> NOT PROFIT</h1> 
+                <p class="text-gray-800 md:text-2xl">5+ companies, 5+ products, 500+ Team member and one mission, <span class="text-black">Happiness & Trust</span> </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="Section-White">
+    <div>
+        <div class="text-center">
+            <h2 class="TextH2">who we are</h2>
+            <hr class="HrH2">
+        </div>
+        <div class="p-5 mx-1 md:mx-20 ">
+            <style>
+                #AboutUs_readmore {display: none;}
+            </style>
+            <div class="Text-P Text-Container-s">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore iste reiciendis dicta laborum. Eveniet aliquid aperiam nemo accusamus blanditiis quisquam! Necessitatibus rerum recusandae consectetur dolore, ratione nostrum magni aperiam quam iure minus harum ipsam earum quos sapiente blanditiis pariatur aliquid.</p>
+                <span id="AboutUs_Readless_dots">...</span>
+                <span id="AboutUs_readmore">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span>
+                <span><button onclick="AboutUs_readmoreFunction()" id="AboutUs_readmore_btn" class="Read_more_btn">Read more</button></span>
+            </div>
+            <div class="text-center">
+                <a href="{% url 'About_us_page' %}" class="Link_btn_1 ">
+                    Know more about us
+                </a>
+            </div>
+            <script>
+                function AboutUs_readmoreFunction() {
+                var dots = document.getElementById("AboutUs_Readless_dots");
+                var moreText = document.getElementById("AboutUs_readmore");
+                var btnText = document.getElementById("AboutUs_readmore_btn");
+                
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more"; 
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less"; 
+                    moreText.style.display = "inline";
+                }
+                }
+            </script>
+            
+        </div>
+    </div>
+</section>
+<section class="Section-White">
+    <style>    
+    .active-slide {
+        opacity: 0.5;
+        border: 3px solid white;
+    }
+    </style>
+<style>
+.top-left {
+  position: absolute;
+  top: 0px;
+  left: 16px;
+}
+.top-center {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+}
+.bottom-center {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  opacity: 0.8;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 0px;
+  left: 16px;
+}
+.bottom-right {
+  position: absolute;
+  bottom: 0px;
+  right: 16px;
+}
+.middle-left {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: left;
+  padding: 30px;
+}
+.middle-left-2 {
+  position: absolute;
+  top: 42%;
+  width: 100%;
+  text-align: left;
+  padding: 30px;
+}
+
+</style>    
+    <section class="">
+        <div class="shadow-2xl">
+        <!-- large image on slides -->
+        <div class="relative">
+            <style>
+                .middle-left-2 {
+                    position: absolute;
+                    top: 60%;
+                    width: 100%;
+                    text-align: left;
+                    padding: 30px;
+                }
+            </style>
+            {% for A in Our_business %}
+            <div class="mySlides hidden Ourbusi-ImgSlides">
+                <img class="Ourbusi-Img1" src="{{A.img.url}}">
+                <div class="middle-left">
+                    <div class="flex">
+                        <h3 class="TextH3">{{A.name}}</h3>
+                        <a href="{{A.Website}}" class="Icon-link-1"><img src="{% static 'icon/globe.png' %}" alt="" class="Icon-image"></a>
+                    </div>
+                    <div>
+                        <p class="Text-P-d">
+                            <span>(</span>
+                            <span>{{A.sub_name}}</span>
+                            <span>)</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="Text-P-d">{{A.about}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class=" top-center">
+                <h2 class="TextH2-d ">Our business</h2>
+                <hr class="HrH2-d ">
+            </div>
+            <div class="middle-left-2">
+                    <a href="{% url 'our_business_page' %}" class="Link_btn_1 ">View all</a>
+            </div>
+    
+            <div class="flex space-x-2 justify-center p-5 bottom-center bg-black">
+                {% for A in Our_business %}
+                    <div>
+                        <img class="description h-24 opacity-100 hover:opacity-50 cursor-pointer" src="{{A.img.url}}" onclick="currentSlide({{A.id}})" alt="Dog's Nose">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </section>
+          
+          
+    <script>
+        //JS to switch slides and replace text in bar//
+        var slideIndex = 1;
+        showSlides(slideIndex);
+    
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+    
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("description");
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active-slide", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active-slide";
+        }
+    </script>
+</section>
+<section class="Section-White">
+    <div class="">
+        <h2 class="TextH2 ">Our Products & Services</h2>
+        <hr class="HrH2 mb-5">
+    </div>
+    <style>
+        .Our_Product_div {
+            width: 100%;
+            
+            display: flex;
+            align-items: flex-start;
+            max-width: 500px;
+            background-color: white;
+            box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 0.25);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            
+
+        }
+        .Our_Product_div_A {
+            width: 50%;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            
+        
+        }
+        .Our_Product_div_B {
+            width: 50%;
+            text-align: left;
+            padding-left: 5px;
+        }
+    </style>
+    <div class="p-3 whitespace-nowrap overflow-x-auto space-x-3">
+        {% for A in Our_products %}
+        <a href="#" class="inline-block ">
+            <div class="Our_Product_div">
+                <div class="Our_Product_div_A">
+                    <img src="{{A.img.url}}" alt="" class="w-full">
+                </div>
+                <div class="Our_Product_div_B">
+                    <p><b>{{A.name}}</b></p>
+                    <p>
+                        <span>(</span>
+                        <span>{{A.sub_name}}</span>
+                        <span>)</span>
+                    </p>
+                    <p>{{A.Brand}}</p>
+                </div>
+
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="mt-5">
+        <a href="{% url 'Our_products_page' %}" class="Link_btn_1 ">View all</a>
+    </div>
+</section>
+{% endblock %}

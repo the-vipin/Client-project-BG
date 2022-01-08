@@ -1,0 +1,79 @@
+/* first headling over sectionn. For example About us, our business */
+/* color pad */
+:root {
+  --Gray-Text: rgb(53, 53, 53);
+  --Black-Text: rgb(31, 31, 31);
+}
+.TextH2 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: var(--Black-Text);
+}
+.TextH2-d {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: white;
+  opacity: 1;
+  text-shadow: 2px 2px 5px black;
+}
+.TextH3 {
+  font-size: 40px;
+  text-transform: capitalize;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.Text-P {
+  color: var(--Gray-Text);
+  text-align: center;
+}
+.Text-P-d {
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+/* containers */
+
+.Text-Container-s {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Section-White {
+  background-color: white;
+  width: 90%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.HrH2 {
+  max-width: 500px;
+  width: 100%;
+  height: 3px;
+  border-width: 0px;
+  background-color: var(--Black-Text);
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.HrH2-d {
+  max-width: 500px;
+  width: 100%;
+  height: 3px;
+  border-width: 0px;
+  background-color: white;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 1;
+  text-shadow: 2px 2px 5px black;
+}

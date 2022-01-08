@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Css Style links-->
+    <link rel="stylesheet" href="{% static 'css/GotoTop-Btn.css' %}">
+    <link rel="stylesheet" href="{% static 'css/basic_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/image_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/link&button_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/text_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/text_on_image.css' %}">
+    
+
+    <!--Css Style links External-->
+    <link href="https://unpkg.com/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!--Js Scripts-->
+    
+    <!--Js Scripts External-->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+{% include "temps/header.html" %}
+
+<main>
+    {% block maincontent %}
+    {% endblock %}
+</main>
+
+{% include "temps/footer.html" %}
+
+<!--Go To Top Button-->
+<div>
+    <button onclick="topFunction()" id="GoToTopBtn" title="Go to top">
+        <img src="{% static 'icon/top.png' %}" alt="" class="w-8 h-8">
+        <span>Top</span>  
+    </button>
+    <script src="{%static 'js/GotoTop-btn.js' %}"></script>
+</div>
+</body>
+</html>

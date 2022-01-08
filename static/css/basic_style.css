@@ -1,0 +1,31 @@
+/* LOOK AT GLANCE  */
+.LOOK-AT-GLANCE {
+  grid-template-columns: repeat();
+}
+.IMAGE-BOX {
+  width: 100%;
+  max-width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.LOOK-AT-GLANCE .VALUE {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.LOOK-AT-GLANCE .IMAGE {
+  object-position: center;
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+.LOOK-AT-GLANCE .CARD {
+  width: 100%;
+  padding: 16px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
